@@ -4,11 +4,11 @@ import {
   ArrowRight,
   Clock,
   Check,
-  Star,
   ChevronDown,
-  Quote,
   Sparkles,
-  Camera,
+  PenLine,
+  CalendarDays,
+  BadgeCheck,
 } from 'lucide-react';
 import Reveal from '@/components/site/Reveal';
 import Aperture from '@/components/site/Aperture';
@@ -18,32 +18,14 @@ import { formatPrice } from '@/lib/format';
 export const dynamic = 'force-dynamic';
 
 const MARQUEE = [
-  'Свадебная съёмка',
-  'Семейные фотосессии',
+  'Студия «Под ключ»',
+  'Индивидуальная съёмка',
+  'Семейная и детская',
+  'Беременность',
+  'День рождения и события',
   'Love story',
-  'Портретные съёмки',
-  'Newborn и первый год',
-  'Предметная съёмка',
-  'Имидж для бизнеса',
-  'Репортаж',
-];
-
-const TESTIMONIALS = [
-  {
-    text: 'Оля — волшебница. На свадьбе она замечала каждый важный момент раньше нас самих: и мамины слёзы, и дедушкин смех. Смотрим фотографии и каждый раз проживаем этот день заново.',
-    name: 'Анастасия и Даниил',
-    context: 'свадьба, август',
-  },
-  {
-    text: 'Пришли на семейную съёмку с детьми трёх и пяти лет — и никто не орал! Оля умеет находить подход даже к самым неусидчивым. Фотографии живые и честные.',
-    name: 'Мария',
-    context: 'семейная фотосессия в парке',
-  },
-  {
-    text: 'Заказывали предметную съёмку для магазина косметики. Ровный свет, чистый фон, подсказки по композиции. Карточки товара приняли с первого раза.',
-    name: 'Елена',
-    context: 'предметная съёмка, маркетплейсы',
-  },
+  'Контент для соцсетей',
+  'Свадьбы и росписи',
 ];
 
 export default function HomePage() {
@@ -101,24 +83,6 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Факты */}
-            <dl
-              className="mt-12 grid max-w-xl grid-cols-3 divide-x divide-white/15 border-t border-white/15 pt-6 animate-fadeUp"
-              style={{ animationDelay: '480ms' }}
-            >
-              {[
-                [`${s.stat_years} лет`, 'в профессии'],
-                [s.stat_shoots, 'съёмок провела'],
-                [s.stat_rating, 'средняя оценка'],
-              ].map(([num, label]) => (
-                <div key={label} className="px-4 first:pl-0 last:pr-0">
-                  <dt className="font-display text-2xl font-bold text-goldsoft sm:text-3xl">{num}</dt>
-                  <dd className="mt-1 text-[10px] uppercase leading-snug tracking-[0.14em] text-paper/60 sm:text-[11px]">
-                    {label}
-                  </dd>
-                </div>
-              ))}
-            </dl>
           </div>
         </div>
 
@@ -258,9 +222,9 @@ export default function HomePage() {
             </div>
             <div className="absolute -bottom-5 right-4 rounded-2xl border border-ink/[0.08] bg-paper/95 px-5 py-3 shadow-card backdrop-blur">
               <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-golddeep">
-                <Camera size={13} /> С 2017 года
+                <BadgeCheck size={13} /> Дипломированный
               </p>
-              <p className="mt-0.5 font-display text-sm font-bold">в профессии</p>
+              <p className="mt-0.5 font-display text-sm font-bold">фотограф</p>
             </div>
           </Reveal>
 
@@ -272,10 +236,11 @@ export default function HomePage() {
             <p className="mt-6 leading-relaxed text-mute">{s.about_text}</p>
             <ul className="mt-7 space-y-3">
               {[
-                'Живые эмоции вместо постановочной пластики',
-                'Честный свет, тёплая цветокоррекция, без «пластиковых» лиц',
-                'Онлайн-галерея полного размера + 30 кадров с ретушью',
-                'от брифа до готовых фото — 2–4 недели',
+                'Аренда фотостудии включена в пакет «Под ключ» — вам ничего искать не нужно',
+                '40–50 фотографий в авторской обработке за час (20–25 — за 30 минут)',
+                'Все готовые фото дополнительно в чёрно-белом варианте',
+                'Онлайн-галерея для просмотра и скачивания',
+                'Помощь с позированием — даже если вы никогда не снимались',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-[15px] text-ink/90">
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-golddeep">
@@ -286,40 +251,59 @@ export default function HomePage() {
               ))}
             </ul>
             <p className="mt-9 font-accent text-4xl italic text-golddeep">Ольга Курденкова</p>
-            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-mute">основатель студии</p>
+            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-mute">фотограф · Кемерово</p>
           </div>
         </div>
       </section>
 
-      {/* ============ ОТЗЫВЫ ============ */}
+      {/* ============ КАК ПРОХОДИТ СЪЁМКА ============ */}
       <section className="border-y border-ink/[0.08] bg-sand/60 py-16 sm:py-20">
         <div className="container-x">
-          <p className="kicker">Отзывы</p>
-          <h2 className="display-h mt-4 text-4xl sm:text-5xl">
-            Слова, которые <span className="accent-i">дороже</span> лайков
+          <p className="kicker">Бронирование</p>
+          <h2 className="display-h mt-4 max-w-3xl text-4xl sm:text-5xl">
+            Три шага до <span className="accent-i">вашей съёмки</span>
           </h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {TESTIMONIALS.map((t) => (
-              <figure key={t.name} className="card flex h-full flex-col gap-4 p-6">
-                <Quote size={26} className="text-goldsoft" fill="currentColor" strokeWidth={0} />
-                <div className="flex gap-0.5 text-gold" aria-label="Оценка 5 из 5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={15} fill="currentColor" strokeWidth={0} />
-                  ))}
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                n: '01',
+                icon: PenLine,
+                title: 'Напишите мне',
+                text: 'Расскажите, что хочется получить: индивидуальную, семейную, детскую съёмку, беременность, love story или мероприятие — выберем формат вместе.',
+              },
+              {
+                n: '02',
+                icon: CalendarDays,
+                title: 'Обсудим детали',
+                text: 'Дата, ваши идеи, локация или студия, образы и референсы — помогу с каждым шагом: подскажу студию, визажиста и аренду одежды.',
+              },
+              {
+                n: '03',
+                icon: BadgeCheck,
+                title: 'Предоплата 1 000 ₽',
+                text: 'После обсуждения вносится предоплата — она фиксирует дату и бронирует студию. Вторая часть оплаты — за 1–2 дня до съёмки.',
+              },
+            ].map((step) => {
+              const Icon = step.icon;
+              return (
+                <div key={step.n} className="card group relative overflow-hidden p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-soft">
+                  <span aria-hidden="true" className="pointer-events-none absolute -right-2 -top-5 select-none font-display text-8xl font-black text-sandline transition-colors group-hover:text-goldsoft/70">
+                    {step.n}
+                  </span>
+                  <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-ink text-goldsoft">
+                    <Icon size={22} />
+                  </span>
+                  <h3 className="relative mt-5 font-display text-2xl font-bold">{step.title}</h3>
+                  <p className="relative mt-2 text-[15px] leading-relaxed text-mute">{step.text}</p>
                 </div>
-                <blockquote className="text-[15px] leading-relaxed text-ink/90">«{t.text}»</blockquote>
-                <figcaption className="mt-auto flex items-center gap-3 border-t border-ink/[0.08] pt-4">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-ink font-display text-base font-bold text-goldsoft">
-                    {t.name.trim()[0]}
-                  </span>
-                  <span>
-                    <span className="block text-sm font-bold">{t.name}</span>
-                    <span className="block text-[11px] uppercase tracking-[0.14em] text-mute">{t.context}</span>
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
+              );
+            })}
           </div>
+
+          <p className="mt-6 text-center text-[13px] text-mute">
+            Если у вас что-то случится — дату можно перенести. Готовность фотографий — до 7 дней.
+          </p>
         </div>
       </section>
 

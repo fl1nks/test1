@@ -86,9 +86,6 @@ export default function SettingsForm({ settings }: { settings: Record<string, st
           <div className="sm:col-span-2">
             <Field label="Текст «Обо мне»" name="about_text" defaultValue={s('about_text')} textarea hint="Абзац на главной странице в блоке «Привет, я — …»." />
           </div>
-          <Field label="Лет в профессии (число)" name="stat_years" defaultValue={s('stat_years')} />
-          <Field label="Съёмок проведено" name="stat_shoots" defaultValue={s('stat_shoots')} />
-          <Field label="Средняя оценка" name="stat_rating" defaultValue={s('stat_rating')} />
         </div>
       </fieldset>
 

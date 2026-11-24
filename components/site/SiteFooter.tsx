@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail, Send, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, Send, Clock, BadgeCheck, CalendarCheck, MapPinned } from 'lucide-react';
 import Aperture from './Aperture';
 import { getSettings } from '@/lib/queries';
 
@@ -27,8 +27,8 @@ export default function SiteFooter() {
               </span>
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed">
-              Свадьбы, семьи, love story, портреты и коммерческая съёмка — в Кемерово,
-              области и с выездом по России.
+              Индивидуальная, семейная и детская съёмка, беременность, дни рождения и мероприятия —
+              в фотостудиях Кемерово и на локациях.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-2">
               <a href={`tel:${digitsOnly(s.phone)}`} aria-label="Позвонить" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-goldsoft hover:text-goldsoft"><Phone size={17} /></a>
@@ -61,9 +61,11 @@ export default function SiteFooter() {
           </div>
 
           <div className="md:col-span-3">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-goldsoft">Студия и выезд</p>
-            <ul className="mt-4 space-y-3 text-sm">
-              <li className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 shrink-0 text-goldsoft" />{s.address}</li>
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-goldsoft">Запись на съёмку</p>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              <li className="flex items-start gap-2"><BadgeCheck size={16} className="mt-0.5 shrink-0 text-goldsoft" />Предоплата 1 000 ₽ фиксирует дату и бронирует студию</li>
+              <li className="flex items-start gap-2"><CalendarCheck size={16} className="mt-0.5 shrink-0 text-goldsoft" />Готовность фотографий — до 7 дней</li>
+              <li className="flex items-start gap-2"><MapPinned size={16} className="mt-0.5 shrink-0 text-goldsoft" />Съёмки в студиях Кемерово и на локациях; выезд за город — по договорённости</li>
               <li className="flex items-start gap-2 whitespace-pre-line"><Clock size={16} className="mt-0.5 shrink-0 text-goldsoft" />{s.work_hours}</li>
             </ul>
           </div>

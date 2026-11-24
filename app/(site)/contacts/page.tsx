@@ -4,10 +4,8 @@ import {
   Phone,
   Mail,
   Send,
-  MapPin,
   Clock,
   Plane,
-  Building2,
 } from 'lucide-react';
 import RequestForm from '@/components/site/RequestForm';
 import { getSettings, getServices } from '@/lib/queries';
@@ -147,28 +145,12 @@ export default function ContactsPage({
                   <Plane size={18} />
                 </span>
                 <div>
-                  <h2 className="text-[11px] font-bold uppercase tracking-[0.22em] text-golddeep">Зона выездной съёмки</h2>
+                  <h2 className="text-[11px] font-bold uppercase tracking-[0.22em] text-golddeep">Где и как проходят съёмки</h2>
                   <p className="mt-2 text-[15px] leading-relaxed text-ink/90">{s.visit_zone}</p>
-                </div>
-              </div>
-              <div className="my-5 border-t border-ink/[0.08]" />
-              <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-goldsoft">
-                  <Building2 size={18} />
-                </span>
-                <div>
-                  <h2 className="text-[11px] font-bold uppercase tracking-[0.22em] text-golddeep">Студия</h2>
-                  <p className="mt-2 text-[15px] leading-relaxed text-ink/90">{s.address}</p>
                 </div>
               </div>
             </div>
 
-            <iframe
-              title="Карта: Кемерово"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=85.9000%2C55.2400%2C86.2800%2C55.4700&layer=mapnik&marker=55.3547%2C86.0873"
-              className="h-56 w-full rounded-2xl border border-ink/10 shadow-card"
-              loading="lazy"
-            />
           </div>
 
           {/* Правая колонка: форма заявки */}
