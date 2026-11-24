@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Портфолио',
   description:
-    'Портфолио фотографа Ольги Руденковой: свадьбы, семейные и love story съёмки, портреты. Фильтр по категориям, полные фото без стоков.',
+    'Портфолио фотографа Ольги Курденковой: свадьбы, семейные и love story съёмки, портреты. Фильтр по категориям, полные фото без стоков.',
 };
 
 export default function PortfolioPage() {

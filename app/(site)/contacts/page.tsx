@@ -17,7 +17,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Контакты и запись',
   description:
-    'Как связаться с фотографом Ольгой Руденковой: телефон, Telegram, WhatsApp, почта, студия в Новосибирске и зона выездной съёмки. Заявка на фотосессию онлайн.',
+    'Как связаться с фотографом Ольгой Курденковой: телефон, Telegram, WhatsApp, почта, студия в Кемерово и зона выездной съёмки. Заявка на фотосессию онлайн.',
 };
 
 function digitsOnly(value: string) {
@@ -164,8 +164,8 @@ export default function ContactsPage({
             </div>
 
             <iframe
-              title="Карта: Новосибирск, студия «Свет»"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=82.7900%2C54.9000%2C83.0200%2C55.0600&layer=mapnik&marker=54.9833%2C82.8969"
+              title="Карта: Кемерово"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=85.9000%2C55.2400%2C86.2800%2C55.4700&layer=mapnik&marker=55.3547%2C86.0873"
               className="h-56 w-full rounded-2xl border border-ink/10 shadow-card"
               loading="lazy"
             />

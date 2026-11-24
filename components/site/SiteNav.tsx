@@ -57,7 +57,7 @@ export default function SiteNav() {
             />
             <span className="leading-tight">
               <span className="block font-display text-[15px] font-extrabold uppercase tracking-[0.18em] sm:text-base">
-                Ольга&nbsp;Руденкова
+                Ольга&nbsp;Курденкова
               </span>
               <span
                 className={`block font-accent text-[13px] italic leading-none ${

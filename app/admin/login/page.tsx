@@ -16,7 +16,7 @@ export default async function LoginPage() {
         <div className="mb-8 text-center text-paper">
           <Aperture className="mx-auto h-14 w-14 text-goldsoft" />
           <h1 className="mt-5 font-display text-3xl font-extrabold">Админ-панель</h1>
-          <p className="mt-1 text-sm text-paper/60">Управление сайтом фотографа Ольги Руденковой</p>
+          <p className="mt-1 text-sm text-paper/60">Управление сайтом фотографа Ольги Курденковой</p>
         </div>
         <LoginForm />
       </div>

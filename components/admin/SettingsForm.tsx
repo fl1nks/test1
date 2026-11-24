@@ -79,7 +79,7 @@ export default function SettingsForm({ settings }: { settings: Record<string, st
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="Имя фотографа" name="photographer_name" defaultValue={s('photographer_name')} />
           <Field label="Подпись (профессия)" name="profession" defaultValue={s('profession')} />
-          <Field label="Надзаголовок на первом экране" name="hero_kicker" defaultValue={s('hero_kicker')} hint="Мелкий текст над большим заголовком, например «Фотограф · Новосибирск»." />
+          <Field label="Надзаголовок на первом экране" name="hero_kicker" defaultValue={s('hero_kicker')} hint="Мелкий текст над большим заголовком, например «Фотограф · Кемерово»." />
           <div className="sm:col-span-2">
             <Field label="Подзаголовок на первом экране" name="hero_subtitle" defaultValue={s('hero_subtitle')} textarea />
           </div>

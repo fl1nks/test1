@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 import { cookies } from 'next/headers';
 
-export const SESSION_COOKIE = 'rudenkova_admin';
+export const SESSION_COOKIE = 'kurdenkova_admin';
 const SESSION_TTL_SEC = 60 * 60 * 24 * 14; // 14 дней
 
 function secret(): string {

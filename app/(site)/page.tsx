@@ -249,7 +249,7 @@ export default function HomePage() {
             <div className="relative overflow-hidden rounded-3xl shadow-soft">
               <Image
                 src="/images/about.jpg"
-                alt="Фотограф Ольга Руденкова на съёмке"
+                alt="Фотограф Ольга Курденкова на съёмке"
                 width={900}
                 height={1100}
                 sizes="(max-width: 1024px) 90vw, 45vw"
@@ -285,7 +285,7 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-9 font-accent text-4xl italic text-golddeep">Ольга Руденкова</p>
+            <p className="mt-9 font-accent text-4xl italic text-golddeep">Ольга Курденкова</p>
             <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-mute">основатель студии</p>
           </div>
         </div>

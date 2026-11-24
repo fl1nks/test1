@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Услуги и цены',
   description:
-    'Прайс фотографа в Новосибирске: портретная, семейная, свадебная, love story, newborn, предметная и имиджевая съёмка, репортаж. Прозрачные цены и запись онлайн.',
+    'Прайс фотографа в Кемерово: портретная, семейная, свадебная, love story, newborn, предметная и имиджевая съёмка, репортаж. Прозрачные цены и запись онлайн.',
 };
 
 export default function UslugiPage() {
@@ -82,7 +82,7 @@ export default function UslugiPage() {
 
           <p className="mt-5 flex items-start gap-2 text-xs leading-relaxed text-mute">
             <Info size={14} className="mt-0.5 shrink-0" />
-            Выезд за пределы города оплачивается отдельно (20 ₽/км после 50 км от Новосибирска).
+            Выезд за пределы города оплачивается отдельно (20 ₽/км после 50 км от Кемерова).
             Предоплата 30% фиксирует дату в календаре. Оплата — наличными, переводом по СБП или на карту.
           </p>
         </div>

@@ -21,13 +21,13 @@ export default function SiteFooter() {
               <Aperture className="h-10 w-10 text-goldsoft" />
               <span className="leading-tight">
                 <span className="block font-display text-lg font-extrabold uppercase tracking-[0.18em]">
-                  Ольга&nbsp;Руденкова
+                  Ольга&nbsp;Курденкова
                 </span>
                 <span className="block font-accent italic text-goldsoft">фотограф</span>
               </span>
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed">
-              Свадьбы, семьи, love story, портреты и коммерческая съёмка — в Новосибирске,
+              Свадьбы, семьи, love story, портреты и коммерческая съёмка — в Кемерово,
               области и с выездом по России.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -70,7 +70,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-paper/50 sm:flex-row">
-          <p>© {year} Ольга Руденкова · Фотограф, Новосибирск</p>
+          <p>© {year} Ольга Курденкова · Фотограф, Кемерово</p>
           <p>Каждое фото — живая история, а не постановочный кадр.</p>
         </div>
       </div>
