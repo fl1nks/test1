@@ -7,7 +7,6 @@ import {
   ArrowRight,
   Plus,
   Upload,
-  Phone,
 } from 'lucide-react';
 import { dashboardStats, getRequests } from '@/lib/queries';
 import { formatDateTime } from '@/lib/format';
@@ -96,9 +95,7 @@ export default function DashboardPage() {
                     <p className="truncate text-xs text-mute">{r.service_title}</p>
                   </div>
                   <div className="text-right">
-                    <a href={`tel:${r.contact.replace(/\D/g, '')}`} className="flex items-center gap-1 text-xs font-semibold text-ink/80 hover:text-golddeep">
-                      <Phone size={12} />{r.contact}
-                    </a>
+                    <span className="text-xs font-semibold text-ink/80">{r.contact}</span>
                     <p className="mt-0.5 text-[10px] uppercase tracking-wide text-mute">{formatDateTime(r.created_at)}</p>
                   </div>
                 </li>

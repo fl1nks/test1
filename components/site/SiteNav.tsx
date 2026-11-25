@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import Aperture from './Aperture';
+import LogoMark from './LogoMark';
 
 const LINKS = [
   { href: '/', label: 'Главная' },
@@ -50,11 +50,7 @@ export default function SiteNav() {
       >
         <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-[72px]">
           <Link href="/" className="group flex items-center gap-3" aria-label="На главную">
-            <Aperture
-              className={`h-9 w-9 transition-transform duration-500 group-hover:rotate-45 ${
-                transparent ? 'text-goldsoft' : 'text-golddeep'
-              }`}
-            />
+            <LogoMark className="h-11 w-11 transition-transform duration-500 group-hover:rotate-6" />
             <span className="leading-tight">
               <span className="block font-display text-[15px] font-extrabold uppercase tracking-[0.18em] sm:text-base">
                 Ольга&nbsp;Курденкова

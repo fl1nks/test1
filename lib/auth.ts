@@ -1,5 +1,6 @@
 import crypto from 'node:crypto';
 import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 export const SESSION_COOKIE = 'kurdenkova_admin';
 const SESSION_TTL_SEC = 60 * 60 * 24 * 14; // 14 дней
@@ -57,9 +58,9 @@ export async function isAuthenticated(): Promise<boolean> {
   return verifySessionToken(store.get(SESSION_COOKIE)?.value);
 }
 
-/** Для серверных экшенов: бросает ошибку, если нет сессии */
+/** Для серверных экшенов: если сессии нет — отправляем на страницу входа */
 export async function requireAdmin(): Promise<void> {
-  if (!(await isAuthenticated())) throw new Error('Нет доступа');
+  if (!(await isAuthenticated())) redirect('/admin/login');
 }
 
 /* ---------- Простой анти-брутфорс на логин (в памяти процесса) ---------- */

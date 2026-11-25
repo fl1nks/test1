@@ -243,15 +243,11 @@ const SETTINGS_KEYS = [
   'profession',
   'hero_kicker',
   'hero_subtitle',
-  'about_text',
-  'phone',
   'email',
   'telegram',
-  'whatsapp',
   'vk',
   'instagram',
   'address',
-  'work_hours',
   'visit_zone',
 ] as const;
 

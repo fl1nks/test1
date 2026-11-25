@@ -11,7 +11,7 @@ import {
   BadgeCheck,
 } from 'lucide-react';
 import Reveal from '@/components/site/Reveal';
-import Aperture from '@/components/site/Aperture';
+import Spark from '@/components/site/Spark';
 import { getSettings, getServices, getPortfolio } from '@/lib/queries';
 import { formatPrice } from '@/lib/format';
 
@@ -101,7 +101,7 @@ export default function HomePage() {
           {[...MARQUEE, ...MARQUEE].map((item, i) => (
             <span key={i} className="flex items-center gap-6 pr-6 text-[13px] font-semibold uppercase tracking-[0.22em] text-paper/75">
               {item}
-              <Aperture className="h-4 w-4 text-goldsoft/80" />
+              <Spark className="h-3.5 w-3.5 text-goldsoft/80" />
             </span>
           ))}
         </div>
@@ -205,57 +205,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ ОБО МНЕ ============ */}
-      <section className="py-16 sm:py-24">
-        <div className="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <Reveal className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div aria-hidden="true" className="absolute -left-4 -top-4 h-full w-full rounded-3xl border border-gold/40" />
-            <div className="relative overflow-hidden rounded-3xl shadow-soft">
-              <Image
-                src="/images/about.jpg"
-                alt="Фотограф Ольга Курденкова на съёмке"
-                width={900}
-                height={1100}
-                sizes="(max-width: 1024px) 90vw, 45vw"
-                className="aspect-[4/5] w-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-5 right-4 rounded-2xl border border-ink/[0.08] bg-paper/95 px-5 py-3 shadow-card backdrop-blur">
-              <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-golddeep">
-                <BadgeCheck size={13} /> Дипломированный
-              </p>
-              <p className="mt-0.5 font-display text-sm font-bold">фотограф</p>
-            </div>
-          </Reveal>
-
-          <div>
-            <p className="kicker">Обо мне</p>
-            <h2 className="display-h mt-4 text-4xl sm:text-5xl">
-              Привет, я — <span className="accent-i">Оля</span>
-            </h2>
-            <p className="mt-6 leading-relaxed text-mute">{s.about_text}</p>
-            <ul className="mt-7 space-y-3">
-              {[
-                'Аренда фотостудии включена в пакет «Под ключ» — вам ничего искать не нужно',
-                '40–50 фотографий в авторской обработке за час (20–25 — за 30 минут)',
-                'Все готовые фото дополнительно в чёрно-белом варианте',
-                'Онлайн-галерея для просмотра и скачивания',
-                'Помощь с позированием — даже если вы никогда не снимались',
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[15px] text-ink/90">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-golddeep">
-                    <Check size={12} strokeWidth={3} />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-9 font-accent text-4xl italic text-golddeep">Ольга Курденкова</p>
-            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-mute">фотограф · Кемерово</p>
-          </div>
-        </div>
-      </section>
-
       {/* ============ КАК ПРОХОДИТ СЪЁМКА ============ */}
       <section className="border-y border-ink/[0.08] bg-sand/60 py-16 sm:py-20">
         <div className="container-x">
@@ -282,7 +231,7 @@ export default function HomePage() {
                 n: '03',
                 icon: BadgeCheck,
                 title: 'Предоплата 1 000 ₽',
-                text: 'После обсуждения вносится предоплата — она фиксирует дату и бронирует студию. Вторая часть оплаты — за 1–2 дня до съёмки.',
+                text: 'Предоплата 1 000 ₽, фиксируем дату и бронируем студию. Вторая часть оплаты — за 1–2 дня до съёмки.',
               },
             ].map((step) => {
               const Icon = step.icon;
@@ -309,8 +258,8 @@ export default function HomePage() {
 
       {/* ============ ФИНАЛЬНЫЙ CTA ============ */}
       <section className="relative overflow-hidden bg-ink py-20 text-center text-paper sm:py-28">
-        <Aperture aria-hidden className="pointer-events-none absolute -left-16 top-1/2 h-96 w-96 -translate-y-1/2 text-white/[0.04]" />
-        <Aperture aria-hidden className="pointer-events-none absolute -right-16 top-1/2 h-96 w-96 -translate-y-1/2 rotate-12 text-white/[0.04]" />
+        <Spark className="pointer-events-none absolute -left-10 top-1/2 h-64 w-64 -translate-y-1/2 text-white/[0.05]" />
+        <Spark className="pointer-events-none absolute -right-10 top-1/2 h-64 w-64 -translate-y-1/2 rotate-12 text-white/[0.05]" />
         <div className="container-x relative">
           <p className="kicker justify-center !text-goldsoft before:!bg-goldsoft/50">
             <Sparkles size={13} /> Запись открыта

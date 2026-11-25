@@ -83,9 +83,6 @@ export default function SettingsForm({ settings }: { settings: Record<string, st
           <div className="sm:col-span-2">
             <Field label="Подзаголовок на первом экране" name="hero_subtitle" defaultValue={s('hero_subtitle')} textarea />
           </div>
-          <div className="sm:col-span-2">
-            <Field label="Текст «Обо мне»" name="about_text" defaultValue={s('about_text')} textarea hint="Абзац на главной странице в блоке «Привет, я — …»." />
-          </div>
         </div>
       </fieldset>
 
@@ -93,33 +90,23 @@ export default function SettingsForm({ settings }: { settings: Record<string, st
       <fieldset className="rounded-2xl border border-ink/10 bg-white p-6 shadow-card">
         <legend className="px-2 font-display text-lg font-bold">Связь с вами</legend>
         <div className="grid gap-4 sm:grid-cols-2">
-          <Field label="Телефон" name="phone" defaultValue={s('phone')} placeholder="+7 (913) 000-00-00" />
-          <Field label="Почта" name="email" defaultValue={s('email')} placeholder="olga@example.com" />
-          <Field label="Telegram (логин)" name="telegram" defaultValue={s('telegram')} placeholder="@username" />
-          <Field label="WhatsApp (номер)" name="whatsapp" defaultValue={s('whatsapp')} placeholder="+7 (913) 000-00-00" />
-          <Field label="ВКонтакте" name="vk" defaultValue={s('vk')} placeholder="vk.com/username" />
-          <Field label="Instagram*" name="instagram" defaultValue={s('instagram')} placeholder="@username" hint="* Instagram — продукт компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ." />
+          <Field label="Telegram (логин)" name="telegram" defaultValue={s('telegram')} placeholder="@kurden_phh" />
+          <Field label="ВКонтакте (ссылка)" name="vk" defaultValue={s('vk')} placeholder="vk.ru/sonsoday" />
+          <Field label="Почта" name="email" defaultValue={s('email')} placeholder="olgakurden@gmail.com" />
+          <Field label="Instagram* (необязательно)" name="instagram" defaultValue={s('instagram')} placeholder="@username" hint="* Instagram — продукт компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ." />
         </div>
       </fieldset>
 
       {/* Адрес, режим, выезд */}
       <fieldset className="rounded-2xl border border-ink/10 bg-white p-6 shadow-card">
-        <legend className="px-2 font-display text-lg font-bold">Где приём и куда выезжаете</legend>
+        <legend className="px-2 font-display text-lg font-bold">Где и как проходят съёмки</legend>
         <div className="grid gap-4">
-          <Field label="Адрес студии / как вас найти" name="address" defaultValue={s('address')} />
           <Field
-            label="Режим работы"
-            name="work_hours"
-            defaultValue={s('work_hours')}
-            textarea
-            hint="Перенос строки сохраняется: каждый с новой строки будет с новой строки на сайте."
-          />
-          <Field
-            label="Зона выездной съёмки"
+            label="Где съёмки и условия выезда"
             name="visit_zone"
             defaultValue={s('visit_zone')}
             textarea
-            hint="Условия бесплатного выезда и доплаты — посетители видят этот текст в блоке «Контакты»."
+            hint="Этот текст показывается на странице «Контакты» в блоке «Где и как проходят съёмки»."
           />
         </div>
       </fieldset>

@@ -14,7 +14,7 @@ import {
   Menu,
   X,
 } from 'lucide-react';
-import Aperture from '@/components/site/Aperture';
+import LogoMark from '@/components/site/LogoMark';
 import { logoutAction } from '@/app/admin/actions';
 
 const NAV = [
@@ -50,7 +50,7 @@ export default function AdminShell({
       {/* Лого */}
       <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
         <Link href="/admin" className="flex items-center gap-3">
-          <Aperture className="h-9 w-9 text-goldsoft" />
+          <LogoMark className="h-11 w-11" />
           <span className="leading-tight">
             <span className="block text-[10px] font-bold uppercase tracking-[0.25em] text-paper/50">
               Админ-панель
