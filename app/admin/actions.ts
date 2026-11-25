@@ -5,6 +5,7 @@ import { headers, cookies } from 'next/headers';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import sharp from 'sharp';
 import { getDb } from '@/lib/db';
 import {
   requireAdmin,
@@ -193,8 +194,21 @@ export async function uploadPhotosAction(formData: FormData): Promise<UploadResu
     const buf = Buffer.from(await file.arrayBuffer());
     if (!hasMagicBytes(buf, mime)) continue;
 
-    const name = crypto.randomUUID() + ext;
-    fs.writeFileSync(path.join(UPLOAD_DIR, name), buf);
+    // Сжимаем фото для веба: длинная сторона не больше 1920 px, JPEG q82.
+    // Исходник с камеры (8–20 МБ) превращается в ~150–300 КБ без видимой потери качества.
+    let outBuf: Buffer;
+    try {
+      outBuf = await sharp(buf)
+        .rotate()
+        .resize({ width: 1920, height: 1920, fit: 'inside', withoutEnlargement: true })
+        .jpeg({ quality: 82, mozjpeg: true })
+        .toBuffer();
+    } catch {
+      continue; // не удалось обработать — пропускаем файл
+    }
+
+    const name = crypto.randomUUID() + '.jpg';
+    fs.writeFileSync(path.join(UPLOAD_DIR, name), outBuf);
     sort += 1;
     db.prepare(
       "INSERT INTO portfolio_items (category_id, title, image_path, sort, created_at) VALUES (?, '', ?, ?, ?)"
