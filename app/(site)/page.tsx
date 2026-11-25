@@ -174,21 +174,19 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-10 grid auto-rows-[150px] grid-cols-2 gap-3 sm:auto-rows-[200px] sm:gap-4 md:grid-cols-4">
-            {portfolio.map((item, i) => (
+          <div className="mt-10 columns-2 gap-3 sm:gap-4 md:columns-3">
+            {portfolio.map((item) => (
               <Link
                 key={item.id}
                 href="/portfolio"
-                className={`group relative overflow-hidden rounded-2xl ${
-                  i === 0 ? 'col-span-2 row-span-2' : ''
-                }`}
+                className="group relative mb-3 sm:mb-4 block w-full break-inside-avoid overflow-hidden rounded-2xl"
               >
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={item.image_path}
                   alt={item.title || item.category_name}
-                  fill
-                  sizes={i === 0 ? '(max-width: 768px) 100vw, 50vw' : '(max-width: 768px) 50vw, 25vw'}
-                  className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+                  loading="lazy"
+                  className="w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
