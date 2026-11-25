@@ -50,10 +50,6 @@ export default function LoginForm() {
       <div className="mt-6">
         <SubmitButton />
       </div>
-      <p className="mt-5 text-center text-[11px] leading-relaxed text-paper/40">
-        Пароль по умолчанию: <span className="font-mono text-paper/60">olga2026</span> —<br />
-        смените его через переменную окружения <span className="font-mono">ADMIN_PASSWORD</span>
-      </p>
     </form>
   );
 }
